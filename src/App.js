@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div>
-      <form ref={formRef}>
+      <form ref={formRef} onSubmit={validateAndSend}>
         <section>
           <label>
             Email:
@@ -58,9 +58,7 @@ function App() {
           </label>
           {passwordError && <Error text="Cannot be blank" />}
         </section>
-        <button type="submit" onClick={validateAndSend}>
-          Отправить
-        </button>
+        <button type="submit">Отправить</button>
       </form>
     </div>
   );
